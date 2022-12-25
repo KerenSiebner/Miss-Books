@@ -23,3 +23,11 @@ color: yellow;
 align-self:flex-end;
 font-size: 0.6em;
 }
+
+.expensive{
+    color: red
+}
+
+.cheap{
+    color:green
+}
