@@ -39,5 +39,6 @@ function saveToStorage(key, value) {
 
 function loadFromStorage(key) {
     const data = localStorage.getItem(key)
+    console.log(data)
     return (data) ? JSON.parse(data) : undefined
 }

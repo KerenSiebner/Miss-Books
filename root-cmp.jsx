@@ -6,7 +6,6 @@ import { BookIndex } from "./views/book-index.jsx";
 
 export function App() {
     const [page, setPage] = useState('home')
-    console.log('page is', page);
 
     return <section className="main-layout app">
         <header className="app-header full main-layout">
