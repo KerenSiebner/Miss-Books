@@ -6,7 +6,7 @@ _createBooks()
 
 export const bookService = {
     query,
-    // get,
+    get,
     // remove,
     // save,
     getEmptyBook,
@@ -17,7 +17,7 @@ export const bookService = {
 function query(filterBy = getDefaultFilter()) {
     console.log('query')
     return storageService.query(BOOK_KEY)
-        .then(books => { 
+        .then(books => {
             if (filterBy.name) {
                 const regex = new RegExp(filterBy.name, 'i')
                 books = books.filter(book => regex.test(book.vendor))
@@ -26,7 +26,11 @@ function query(filterBy = getDefaultFilter()) {
             //     books = books.filter(book => book.price >= filterBy.price)
             // }
             return books
-         })
+        })
+}
+
+function get(bookId) {
+    return storageService.get(BOOK_KEY, bookId)
 }
 
 function getDefaultFilter() {
@@ -73,7 +77,7 @@ function _createBooks() {
                 isOnSale: true
             }))
 
-            console.log('books', books)
+        console.log('books', books)
         utilService.saveToStorage(BOOK_KEY, books)
     }
 

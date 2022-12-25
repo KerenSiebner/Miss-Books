@@ -4,14 +4,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 200px;
 }
 
 .book-preview h4{
     text-transform: capitalize;
-    color: rgb(198, 195, 195);
+    color: rgb(235, 230, 230);
 }
 
 .book-preview img {
-height: 200px;
-width: 150px;
+height: 150px;
+width: 100px;
+}
+
+.on-sale{
+margin:0;
+color: yellow;
+align-self:flex-end;
+font-size: 0.6em;
 }

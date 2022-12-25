@@ -1,0 +1,12 @@
+label{
+    padding-left: 20px;
+    font-size: 0.9em;
+}
+
+form{
+    background-color:azure;
+    padding:10px 20px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-top: 10px;
+}

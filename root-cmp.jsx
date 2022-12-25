@@ -5,7 +5,7 @@ import { AboutUs } from "./views/about-us.jsx";
 import { BookIndex } from "./views/book-index.jsx";
 
 export function App() {
-    const [page, setPage] = useState('home')
+    const [page, setPage] = useState('book')
 
     return <section className="main-layout app">
         <header className="app-header full main-layout">
