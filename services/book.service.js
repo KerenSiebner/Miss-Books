@@ -8,15 +8,15 @@ _createBooks()
 export const bookService = {
     query,
     get,
-    // remove,
-    // save,
+    remove,
+    save,
     getEmptyBook,
     getDefaultFilter,
 }
 
 // function query(filterBy = getDefaultFilter()) {
 function query(filterBy = getDefaultFilter()) {
-    console.log('filterBy', filterBy)
+    // console.log('filterBy', filterBy)
     return storageService.query(BOOK_KEY)
         .then(books => {
             if (filterBy.name) {
@@ -34,17 +34,35 @@ function get(bookId) {
     return storageService.get(BOOK_KEY, bookId)
 }
 
+function remove(bookId){
+return storageService.remove(BOOK_KEY,bookId)
+}
+
+function save(book){
+    if (book.id) {
+        return storageService.put(BOOK_KEY, book)
+    } else {
+        return storageService.post(BOOK_KEY, book)
+    }
+}
+
 function getDefaultFilter() {
     return { name: '', maxPrice: '' }
 }
 
-function getEmptyBook(title = '', description = '', thumbnail = '', listPrice = {}) {
+function getEmptyBook() {
     return {
         id: '',
-        title,
-        description,
-        thumbnail,
-        listPrice
+        title: '',
+        subtitle: '',
+        authors:[],
+        publishedDate: null,
+        description: '',
+        pageCount: null,
+        categories:[],
+        thumbnail: '',
+        language: '',
+        listPrice:{}
     }
 }
 
