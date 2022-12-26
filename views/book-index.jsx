@@ -17,8 +17,8 @@ export function BookIndex() {
 
     function loadBooks() {
         console.log('load books..')
-        bookService.query(filterBy).then(booksToDisplay => {
-            setBooks(booksToDisplay)})
+        bookService.query(filterBy).then(booksToUpdate => {
+            setBooks(booksToUpdate)})
     }
 
     function onSetFilter(filterByFromFilter) {
@@ -30,7 +30,7 @@ export function BookIndex() {
            setSelectedBook(book) 
         })
     }
-
+    //TODO add loading msg
     return <section className="home">
         <BookFilter onSetFilter={onSetFilter} />
         {!selectedBook && <BookList books={books} onSelectBook={onSelectBook} />}

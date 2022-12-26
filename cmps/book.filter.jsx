@@ -1,6 +1,6 @@
 const { useState, useEffect } = React
 
-import { bookService } from "../services/book.service.js"
+import { bookService } from "./../services/book.service.js"
 
 export function BookFilter({onSetFilter}){
 
@@ -25,20 +25,20 @@ export function BookFilter({onSetFilter}){
     }
     return <section className="book-filter">
         <form onSubmit={onSubmitFilter}>
-            <label htmlFor="title">Title:  </label>
+            <label htmlFor="name">Title:  </label>
             <input type="text"
-                id="title"
-                name="txt"
+                id="name"
+                name="name"
                 placeholder="Filter by book title"
-                value={filterByToEdit.txt}
+                value={filterByToEdit.name}
                 onChange={handleChange}
             />
-            <label htmlFor="price">Price:  </label>
+            <label htmlFor="maxPrice">Maximun price:  </label>
             <input type="number"
-                id="price"
-                name="price"
+                id="maxPrice"
+                name="maxPrice"
                 placeholder="Filter by price"
-                value={filterByToEdit.price}
+                value={filterByToEdit.maxPrice}
                 onChange={handleChange}
             />
 
