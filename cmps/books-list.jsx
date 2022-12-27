@@ -10,7 +10,7 @@ export function BookList({ books, onRemoveBook }) {
                 <BookPreview book={book} />
                 <div>
                     {/* <button onClick={() => onSelectBook(book.id)}>Select</button> */}
-                    <Link to={`/book/${book.id}`}>Select</Link>
+                    <Link to={`/book/${book.id}`}> <button>Select</button> </Link>
                     <button onClick={() => onRemoveBook(book.id)}>Remove</button>
                     {/* <Link to={`/book/${book.id}`} onClick={()=> onSelectBook(book.id)}>Select </Link> */}
                 </div>

@@ -16,7 +16,6 @@ export function App() {
     return <Router>
         <section className="main-layout app">
             <AppHeader />
-
             <main className="full main-layout">
                 <Routes>
                     <Route element={<HomePage/>} path="/" />
@@ -24,6 +23,7 @@ export function App() {
                     <Route element={<BookIndex/>} path="/book" />
                     <Route element={<BookDetails/>} path="/book/:bookId" />
                     <Route element={<BookEdit/>} path="/book/edit" />
+                    <Route element={<BookEdit/>} path="/book/edit/:bookId" />
                 </Routes>
             </main>
             <UserMsg/>
